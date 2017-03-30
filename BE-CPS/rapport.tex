@@ -38,7 +38,7 @@ Apres application du principe fondamental de la dynamique, il vient l'équation 
 
 \subsection{Simulation}
 Nous avons réalisé puis simulé un modèle dans Simulink. Le pendule ne fait qu'osciller autour de 0, sa position d'équilibre car il n'y a ni frottements ni contrôle appliqué au mobile.
-\begin{figure}[h]
+\begin{figure}[h!]
 	\includegraphics[scale=0.3]{images/pendule_simple_sys}
 	\caption{Modèle Simulink du pendule simple}
 	\label{model_pendule_simu}
@@ -48,7 +48,7 @@ Nous avons réalisé puis simulé un modèle dans Simulink. Le pendule ne fait q
 	\caption{Position du pendule}
 	\label{simu_pendule_xy}
 \end{figure} 
-\begin{figure}[h!]
+\begin{figure}[h]
 	\includegraphics[scale=0.3]{images/pendule_simple_graph}
 	\caption{Evolution de $\theta$ au cours du temps}
 	\label{simu_pendule}
@@ -67,15 +67,15 @@ Le facteur K permet a stabiliser le pendule. Sa valeur dépend de la condition i
 Ensuite nous introduirons une perturbation afin de tester la robustesse du contrôle.
 \subsection{Simulation}
 \begin{figure}[h!]
-	\includegraphics[scale=0.3]{images/pendule_inverse_1}
+	\includegraphics[scale=0.2]{images/pendule_inverse_1}
 	\caption{Vue globale du système}
 \end{figure}
 \begin{figure}[h!]
-	\includegraphics[scale=0.3]{images/pendule_inverse_2}
+	\includegraphics[scale=0.2]{images/pendule_inverse_2}
 	\caption{Système de contrôle}
 \end{figure}
 \begin{figure}[h!]
-	\includegraphics[scale=0.28]{images/pendule_inverse_3}
+	\includegraphics[scale=0.2]{images/pendule_inverse_3}
 	\caption{Système}
 \end{figure}
 \begin{figure}[h!]
@@ -92,6 +92,7 @@ Ensuite nous introduirons une perturbation afin de tester la robustesse du contr
 \end{figure}
 \section{Modèle continu et discret du robot Lego}
 \subsection{Modélisation}
+Le but de cette partie est de se placer au plus près de la réalité du Lego. Nous réalisons donc une modélisation et simulation discrète. Afin de reproduire le fonctionnement du Lego, nous introduisons des capteurs et prédicteurs. En effet sur le Lego nous n'avons pas accès à toute les valeurs, le robot etant équipé d'un gyroscope mesurant la vitesse de changement d'angle du pendule $\frac{d\alpha}{dt}$, il faut donc reconstruire les autres valeurs a l'aide d'un sous-sytème prédicteur.
 \subsection{Simulation}
 
 \section{Application embarquée dans le robot Lego}
