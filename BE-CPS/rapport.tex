@@ -97,5 +97,9 @@ Le but de cette partie est de se placer au plus près de la réalité du Lego. N
 
 \section{Application embarquée dans le robot Lego}
 
+Le but final du projet est d'implémenter le modèle simulé sous simulink dans le robot Lego et de le faire tenir à la verticale. Le robot fournie la vitesse de variation de l'angle verticale($d\psi$) et la position de la roue ($\theta_m$). Comme dans la simulation, on réalise alors un prédicteur avec un intégrateur et dérivateur discret. On fixe ensuite une commande K calculée avec des valeurs propres négatives.
+
+Une fois le programme uploadé et lancé le robot, le robot commence à osciller avant de sortir de la zone de contrôle. Cette perte de contrôle est surement dû à un mauvais choix de K. En effet, même si le K choisi possède des valeurs propres négatives, on n'émet aucune propriété sur la vitesse de convergence et d'hypothèse de convergence dans un cas discret. Certains K pourraient donc s'avérer plus adéquat pour des intégrateurs discret avec une modélisation réaliste que dans un certain domaine de variation.
+
 \section*{Conclusion}
 \end{document}
